@@ -1,0 +1,33 @@
+
+
+<div class="mx-auto mt-3" style="width: 75%;" >
+  
+   <input type="text"   #deger class="form-control" >
+  
+    <br>
+  <button class="ms-3" mat-raised-button  (click)="getTodoFilter(deger.value)">Arama (UserId)</button>  
+  <button class="ms-3" mat-raised-button color="primary"  (click)="ngOnInit()">Tüm Liste</button>
+
+  <button  class="ms-3"mat-button color="primary" (click)="AddTodo(deger.value)">Add</button>
+
+  <br>
+ 
+ 
+ 
+
+  <div *ngFor="let item of TodoList">
+  <ul>
+
+    <li> UserId : {{item.userId}}</li>
+    <li> id : {{item.id}}</li>
+    <li> title : {{item.title}}</li>
+    <li> completed : {{item.completed}}</li>
+    <button  mat-raised-button color="accent" (click)="UpdateTodo(item, deger.value)">Title Update</button>
+    <button  class="ms-3" mat-raised-button color="warn" (click)="DeleteTodo(item)">Delete</button>
+
+  </ul>
+
+  </div> 
+</div>
+
+<router-outlet></router-outlet>
